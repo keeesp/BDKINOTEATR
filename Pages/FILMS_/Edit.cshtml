@@ -1,0 +1,65 @@
+﻿@page
+@model DBKINOTEATR.Pages.FILMS_.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>FILMS</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FILMS.NAIMENOVANIE" class="control-label"></label>
+                <input asp-for="FILMS.NAIMENOVANIE" class="form-control" />
+                <span asp-validation-for="FILMS.NAIMENOVANIE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FILMS.STRANA_PROIZVODITEL" class="control-label"></label>
+                <input asp-for="FILMS.STRANA_PROIZVODITEL" class="form-control" />
+                <span asp-validation-for="FILMS.STRANA_PROIZVODITEL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FILMS.FIRMA_PROIZVODITEL" class="control-label"></label>
+                <input asp-for="FILMS.FIRMA_PROIZVODITEL" class="form-control" />
+                <span asp-validation-for="FILMS.FIRMA_PROIZVODITEL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FILMS.ACTERS" class="control-label"></label>
+                <input asp-for="FILMS.ACTERS" class="form-control" />
+                <span asp-validation-for="FILMS.ACTERS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FILMS.VOZVRASTNIE_OGRANICHENIYA" class="control-label"></label>
+                <input asp-for="FILMS.VOZVRASTNIE_OGRANICHENIYA" class="form-control" />
+                <span asp-validation-for="FILMS.VOZVRASTNIE_OGRANICHENIYA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FILMS.DLITELNOST" class="control-label"></label>
+                <input asp-for="FILMS.DLITELNOST" class="form-control" />
+                <span asp-validation-for="FILMS.DLITELNOST" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FILMS.OPISANIE" class="control-label"></label>
+                <input asp-for="FILMS.OPISANIE" class="form-control" />
+                <span asp-validation-for="FILMS.OPISANIE" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="FILMS.ID" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

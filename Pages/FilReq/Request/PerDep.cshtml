@@ -1,0 +1,34 @@
+﻿@page
+@model DBKINOTEATR.Pages.FilReq.Request.PerDepModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+           
+            
+            
+            <th>
+                @Html.DisplayNameFor(model => model.SOTRUDNIKI[0].FIO)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SOTRUDNIKI)
+        {
+            <tr>
+               
+                
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.FIO)
+                </td>
+               
+
+                
+            </tr>
+        }
+    </tbody>
+</table>

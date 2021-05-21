@@ -1,0 +1,72 @@
+﻿@page
+@model DBKINOTEATR.Pages.FILMS_.IndexModel
+
+@{
+    ViewData["Title"] = "Фильмы";
+}
+
+<h1>Фильмы</h1>
+
+<p>
+    <a asp-page="Create">Добавить новый фильм</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FILMS[0].NAIMENOVANIE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FILMS[0].STRANA_PROIZVODITEL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FILMS[0].FIRMA_PROIZVODITEL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FILMS[0].ACTERS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FILMS[0].VOZVRASTNIE_OGRANICHENIYA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FILMS[0].DLITELNOST)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FILMS[0].OPISANIE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.FILMS) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAIMENOVANIE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STRANA_PROIZVODITEL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIRMA_PROIZVODITEL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACTERS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VOZVRASTNIE_OGRANICHENIYA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DLITELNOST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OPISANIE)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

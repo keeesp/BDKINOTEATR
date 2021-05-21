@@ -1,0 +1,54 @@
+﻿@page
+@model DBKINOTEATR.Pages.DOLJNOSTI_.IndexModel
+
+@{
+    ViewData["Title"] = "Должности";
+}
+
+<h1>ДОЛЖНОСТИ СОТРУДНИКОВ</h1>
+
+<p>
+    <a asp-page="Create">Добавить новую должность</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DOLJNOSTI[0].NAIMENOVANIE_DOLJNOSTI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOLJNOSTI[0].OKLAD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOLJNOSTI[0].OBYAZANOSTI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOLJNOSTI[0].TREBOVANIYA)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DOLJNOSTI) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAIMENOVANIE_DOLJNOSTI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OKLAD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OBYAZANOSTI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TREBOVANIYA)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробности</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

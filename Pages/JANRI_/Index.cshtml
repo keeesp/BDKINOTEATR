@@ -1,0 +1,42 @@
+﻿@page
+@model DBKINOTEATR.Pages.JANRI_.IndexModel
+
+@{
+    ViewData["Title"] = "Жанры";
+}
+
+<h1>Жанры</h1>
+
+<p>
+    <a asp-page="Create">Добавить новый жанр</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JANRI[0].NAIMENOVANIE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JANRI[0].OPISANIE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.JANRI) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAIMENOVANIE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OPISANIE)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+﻿@page
+@model DBKINOTEATR.Pages.DOLJNOSTI_.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>DOLJNOSTI</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DOLJNOSTI.ID" />
+            <div class="form-group">
+                <label asp-for="DOLJNOSTI.NAIMENOVANIE_DOLJNOSTI" class="control-label"></label>
+                <input asp-for="DOLJNOSTI.NAIMENOVANIE_DOLJNOSTI" class="form-control" />
+                <span asp-validation-for="DOLJNOSTI.NAIMENOVANIE_DOLJNOSTI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DOLJNOSTI.OKLAD" class="control-label"></label>
+                <input asp-for="DOLJNOSTI.OKLAD" class="form-control" />
+                <span asp-validation-for="DOLJNOSTI.OKLAD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DOLJNOSTI.OBYAZANOSTI" class="control-label"></label>
+                <input asp-for="DOLJNOSTI.OBYAZANOSTI" class="form-control" />
+                <span asp-validation-for="DOLJNOSTI.OBYAZANOSTI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DOLJNOSTI.TREBOVANIYA" class="control-label"></label>
+                <input asp-for="DOLJNOSTI.TREBOVANIYA" class="form-control" />
+                <span asp-validation-for="DOLJNOSTI.TREBOVANIYA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

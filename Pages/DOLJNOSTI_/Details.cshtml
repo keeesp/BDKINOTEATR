@@ -1,0 +1,43 @@
+﻿@page
+@model DBKINOTEATR.Pages.DOLJNOSTI_.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DOLJNOSTI</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DOLJNOSTI.NAIMENOVANIE_DOLJNOSTI)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DOLJNOSTI.NAIMENOVANIE_DOLJNOSTI)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DOLJNOSTI.OKLAD)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DOLJNOSTI.OKLAD)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DOLJNOSTI.OBYAZANOSTI)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DOLJNOSTI.OBYAZANOSTI)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DOLJNOSTI.TREBOVANIYA)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DOLJNOSTI.TREBOVANIYA)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.DOLJNOSTI.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
